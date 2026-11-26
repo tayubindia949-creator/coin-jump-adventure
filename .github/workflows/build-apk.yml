@@ -1,11 +1,10 @@
-
 name: Build Signed Coin Jump Adventure APK
 
 on:
   workflow_dispatch:
   push:
     paths:
-      - 'coin-jump-adventure.zip'
+      - 'coin-jump-adventure-unity-ads-source-verified.zip'
       - '.github/workflows/build-apk.yml'
 
 permissions:
@@ -39,7 +38,7 @@ jobs:
       - name: Extract game project
         run: |
           mkdir -p project
-          unzip -o coin-jump-adventure.zip -d project
+          unzip -o coin-jump-adventure-unity-ads-source-verified.zip -d project
           test -f project/app/build.gradle.kts
 
       - name: Prepare Amazon signing key
